@@ -1,59 +1,54 @@
-# VigitechTests
+# VigiTech Tests 
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.22.
+Application Angular avec suite de tests automatisés complète.
 
-## Development server
+## Stack technique
+- **Framework** : Angular 19
+- **Tests unitaires** : Jest
+- **Tests E2E** : Cypress
+- **CI/CD** : GitHub Actions
 
-To start a local development server, run:
+## Couverture de tests
+- ✅ 15 tests unitaires Jest (84% couverture)
+- ✅ 11 tests E2E Cypress
+- ✅ Pipeline CI/CD automatique
 
+## Installation
 ```bash
-ng serve
+npm install --legacy-peer-deps
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+## Lancer les tests
 ```bash
-ng generate component component-name
+# Tests unitaires Jest
+npm test
+
+# Tests E2E Cypress
+npm run cy:run
+
+# Cypress mode interactif
+npm run cy:open
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Pipeline CI/CD
 
-```bash
-ng generate --help
+Le pipeline GitHub Actions :
+1. Lance les tests **Jest** automatiquement
+2. Lance les tests **Cypress E2E**
+3. Bloque le déploiement si un test échoue
+
+## Structure
 ```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
+src/
+├── app/
+│   ├── components/
+│   │   ├── login/          # Composant login + tests
+│   │   └── dashboard/      # Composant dashboard + tests
+│   └── services/
+│       └── auth.service.ts # Service auth + tests
+cypress/
+└── e2e/
+    ├── app.cy.ts           # Tests page principale
+    ├── login.cy.ts         # Tests formulaire login
+    └── dashboard.cy.ts     # Tests dashboard
 ```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
